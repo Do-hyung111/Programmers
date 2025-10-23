@@ -9,7 +9,7 @@ class Solution {
                 v.add(strArr[i]);
         }
         String[] answer = new String[v.size()];
-        answer = (String[])v.toArray(answer);
+        answer = v.toArray(answer);
         
         return answer;
     }
