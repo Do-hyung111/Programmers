@@ -14,8 +14,7 @@ class Solution {
                 time = time + 100 - 60;
             
             for(int j=0; j<7;j++){
-                day = (day-1)%7 +1;
-                if(day == 6|| day == 7){
+                if(day%7 == 6|| day%7 == 0){
                     day++;
                     continue;
                 }
