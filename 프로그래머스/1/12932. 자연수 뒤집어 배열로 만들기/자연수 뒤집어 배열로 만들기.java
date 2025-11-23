@@ -1,14 +1,11 @@
 class Solution {
-    public long[] solution(long n) {
+    public int[] solution(long n) {
         
-        String size = n + "";
-        long[] answer = new long[size.length()];
-        int count = 0;
+        String temp = n + "";
+        int[] answer = new int[temp.length()];
         
-        while(count < size.length()){
-            answer[count] = n%10;
-            n = n/10;
-            count++;
+        for(int i=0; i<answer.length;i++){
+            answer[i] = Integer.parseInt(temp.charAt(temp.length()-i-1)+"");
         }
 
         return answer;
