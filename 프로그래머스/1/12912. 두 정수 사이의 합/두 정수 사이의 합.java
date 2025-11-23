@@ -10,7 +10,7 @@ class Solution {
         }
         
         for(int i=small; i<=big;i++)
-            sum += i;
+            sum += (long)i;
         
         return sum;
     }
