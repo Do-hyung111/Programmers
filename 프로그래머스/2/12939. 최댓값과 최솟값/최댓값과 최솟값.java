@@ -8,8 +8,8 @@ class Solution {
         int min = Integer.parseInt(div[0]);
         for(int i=1; i<temp.length;i++){
             int num = Integer.parseInt(div[i]);
-            max = (max<num) ? num : max;
-            min = (min>num) ? num : min;
+            if(max < num) max = num;
+            if(min > num) min = num;
         }
         return min + " " + max;
     }
