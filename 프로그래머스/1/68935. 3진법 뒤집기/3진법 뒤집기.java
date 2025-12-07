@@ -1,13 +1,8 @@
 class Solution {
     public int solution(int n) {
-        int answer = 0;
-        char[] three = base3Re(n).toCharArray();
-        int cnt = three.length-1;
+        String three = base3Re(n);
         
-        for(int i=0; i<three.length ;i++)
-            answer += (three[i]-48) * Math.pow(3,cnt--); 
-        
-        return answer;
+        return Integer.parseInt(three, 3);
     }
     
     public String base3Re(int n){
