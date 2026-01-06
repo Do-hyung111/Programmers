@@ -2,10 +2,7 @@ import java.util.ArrayList;
 
 class Solution {
     public int[] solution(int n, String[] words) {
-        int[] answer = new int[2];
-        int people = 2;
-        int cycle = 1;
-        boolean NoBody = true;
+        int[] answer = {0,0};
         ArrayList<String> arr = new ArrayList<String>();
         arr.add(words[0]);
 
@@ -13,30 +10,12 @@ class Solution {
             char prior = words[i-1].charAt(words[i-1].length()-1);
             char now = words[i].charAt(0);
             
-            if(arr.contains(words[i])){
-                NoBody = false;
+            if(arr.contains(words[i])||prior!=now){
+                answer[0] = i%n+1;
+                answer[1] = i/n+1;
                 break;
             }
             arr.add(words[i]);
-            if(prior != now){
-                NoBody = false;
-                break;
-            }
-            
-            if(people == n){
-                people = 0;
-                cycle++;
-            }
-            people++;
-        }
-        
-        if(NoBody){
-            answer[0] = 0;
-            answer[1] = 0;
-        }
-        else{
-            answer[0] = people;
-            answer[1] = cycle;
         }
         
         return answer;
